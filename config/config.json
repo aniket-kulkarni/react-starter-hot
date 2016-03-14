@@ -1,0 +1,9 @@
+{
+    "production" : {
+        "url" : "abc"
+    },
+    "development" : {
+        "url" : "def",
+        "sdd" : "wwd"
+    }
+}

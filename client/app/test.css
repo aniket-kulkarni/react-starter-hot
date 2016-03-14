@@ -1,0 +1,5 @@
+@import '../styles/config.css';
+
+.root {
+    background-color : var(--background);
+}

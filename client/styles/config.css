@@ -1,0 +1,16 @@
+:root {
+
+    --navigatorWidth : 200px;
+    --editorWidth : 530px;
+    --viewerWidth : 540px;
+    --patternsWidth : 260px;
+
+    /* Editor Vars */
+    --background : wheat;
+    --lineMarker : #343D46;
+    --attribute : #d6bb6d;
+    --tagColor : #EC5f67;
+    --mainFontSize : 16px;
+    --lineFontSize : 12px;
+    --headerHeight : 40px;
+}
