@@ -17,12 +17,12 @@ module.exports = function(config) {
     ],
     preprocessors: {
       'tests.webpack.js': [
-        'webpack',
+        'webpack','sourcemap'
       ],
     },
 
     reporters: [
-      'spec',
+      'spec','coverage'
     ],
     singleRun: true,
     webpack: {
@@ -38,11 +38,20 @@ module.exports = function(config) {
                   loader : 'style-loader!css-loader?sourceMap&modules&importLoaders=1&localIdentName=[name]-[local]-[hash:base64:5]!cssnext-loader'
               }
         ],
+        postLoaders: [ { //delays coverage til after tests are run, fixing transpiled source coverage error
+         test: /\.(es6|js|jsx)$/,
+         exclude: /(test|node_modules|bower_components)\//,
+         loader: 'istanbul-instrumenter'
+       }]        
       },
       watch: true,
     },
     webpackServer: {
       noInfo: true,
     },
+    coverageReporter: {
+      type: 'html', //produces a html document after code is run
+      dir: 'tests/coverage/' //path to created html doc
+    }
   });
 };

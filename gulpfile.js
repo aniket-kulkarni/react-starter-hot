@@ -10,15 +10,13 @@ var mkdirp = require('mkdirp');
 
 gulp.task('lint',function() {
 
-    console.log(config);
-
     return gulp.src(config.srcJs)
         .pipe(lint({config : '.eslintrc.json'}))
         .pipe(lint.format())
         .pipe(lint.failAfterError());
 });
 
-gulp.task('test', ['lint'], function (done) {
+gulp.task('test', [], function (done) {
   new Server({
     configFile: __dirname + '/karma.conf.js',
     singleRun: true

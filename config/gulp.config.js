@@ -8,7 +8,7 @@ module.exports = (function() {
   var config = {
 
     /** Src Files */
-    srcJs : [client + "**/*.js",client + "**/*.jsx"],
+    srcJs : [client + "**/*.js",client + "**/*.jsx","!" + client + "app/config/config.js"],
 
     /** Client Dir */
 
